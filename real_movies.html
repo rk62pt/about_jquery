@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<head>
+<title>m page</title>
+<link rel="stylesheet" type="text/css" href="css/infotag.css" />
+</head>
+<body>
+<div id="container"></div>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/infotag.js"></script>
+<script>
+
+$(function(){
+  // $.ajaxPrefilter(function(options) {
+  //   if(options.crossDomain && jQuery.support.cors) {
+  //     var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+  //     options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
+  //     //options.url = "http://cors.corsproxy.io/url=" + options.url;
+  //   }
+  // });
+
+  $.ajax({
+    crossDomain: true,
+    type:"GET",
+    contentType: "application/json; charset=UTF-8",
+    url:"data/movie.json",
+    dataType:"json",
+    success:function(value){
+      //alert( jqXHR.responseText);
+      //console.log(value);
+      $("#container").infotag(value);
+    },
+    error: function(XHR, textStatus, errorThrown) {
+            //console.log( XHR);
+            console.log("error: " + textStatus);
+            console.log("error: " + errorThrown);
+    }
+  });
+
+
+});
+
+</script>
+</body>
+</html>
