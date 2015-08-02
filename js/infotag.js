@@ -6,7 +6,9 @@ $.fn.infotag = function(data){
     var label = $("<label>").html(obj.title);
     var div = $("<div>").append(label);
     var descriptDiv = $("<div>").html(obj.descriptionFilterHtml);
-    divContent.append(div).append(descriptDiv);
+
+    var dateDiv = $("<div>").addClass("infotag-date").html(obj.startDate+"~"+obj.endDate);
+    divContent.append(div).append(dateDiv).append(descriptDiv);
 
     $this.append(divContent);
   });
