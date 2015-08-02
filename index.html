@@ -1,3 +1,98 @@
+<<<<<<< HEAD
+<!doctype html>
+<html>
+<meta charset="utf-8">
+<head>
+<title>m page</title>
+<link rel="stylesheet" type="text/css" href="css/infotag.css" />
+</head>
+<body>
+<div id="container"></div>
+<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="js/infotag.js"></script>
+<script>
+
+$(function(){
+  $.ajaxPrefilter(function(options) {
+    if(options.crossDomain && jQuery.support.cors) {
+      var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+      options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
+      //options.url = "http://cors.corsproxy.io/url=" + options.url;
+    }
+  });
+
+  $.get(
+      'http://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=6',
+      function(response) {
+          console.log(response);
+  });
+
+  $.ajax({
+    crossDomain: true,
+    type:"GET",
+    contentType: "application/json; charset=UTF-8",
+    url:"http://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=8",
+    dataType:"json",
+    success:function(value){
+      //alert( jqXHR.responseText);
+      console.log(value);
+      $("#container").infotag(value);
+    },
+    error: function(XHR, textStatus, errorThrown) {
+            //console.log( XHR);
+            console.log("error: " + textStatus);
+            console.log("error: " + errorThrown);
+    }
+  });
+
+
+});
+var data = [
+  {title:'中正紀念堂',descript:'又稱作自由廣場，位於古亭站及台大醫院站中間．'},
+  {title:'台大醫院',descript:'台北的醫院，位於台大醫院站旁邊．'},
+  {title:'麻膳堂',descript:'位於國父紀念館附近．'}
+          ];
+
+  window.showHandler = function(data){
+    console.log(data);
+  }
+
+  function ajaxCallJsonp(target){
+
+      var data = $.getJSON(target,
+      {
+          tags: "mount rainier",
+          tagmode: "any",
+          format: "json"
+      });
+
+      //成功得到資料
+      data.success(function( msg ) {
+        console.log(msg);
+          // $.each(msg.items, function(i,item){
+          //
+          //       //empty content
+          //       //$("#result").html();
+          //       console.log(i)
+          //
+          //       $("#result").append($("<img/>").attr("src", item.media.m));
+          //
+          //       if ( i == 3 ) {
+          //           return false;
+          //       }
+          // });
+      });
+
+      //取得資料失敗
+      data.error(function( msg ) {
+          $("#result").html("fail getting data");
+      });
+
+  }
+
+</script>
+</body>
+=======
 <!DOCTYPE html>
 <html>
 
@@ -69,4 +164,5 @@
     
 
   </body>
+>>>>>>> origin/gh-pages
 </html>
