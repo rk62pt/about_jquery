@@ -6,7 +6,7 @@
   margin : 5px 5px 5px 5px;
   display : inline-block;
   overflow:hidden;
-
+  vertical-align : top 
   /*overflow-y:auto;*/
 }
 .infotag:hover{
