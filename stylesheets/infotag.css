@@ -63,7 +63,7 @@
 @media only screen and (max-width: 768px) {
   .infotag div{
     margin : 10px 10px 10px 10px;
-    font-size:18px;
+    font-size:16px;
 
   }
   .infotag label{
@@ -73,13 +73,13 @@
     -webkit-background-size:contain;        /*for Google Chrome、Safari*/
     -o-background-size:contain;        /*for Opera*/
     background-size:contain;        /*for IE*/
-    font-size:22px;
+    font-size:20px;
     color:#0020FF;
     padding-left:35px;
   }
 
   .infotag-date{
-    font-size:16px;
+    font-size:14px;
     color:#0030FF;
   }
 }
