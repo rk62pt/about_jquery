@@ -52,10 +52,34 @@
   background-size:contain;        /*for IE*/
   font-size:18px;
   color:#0020FF;
-  padding-left:25px; 
+  padding-left:25px;
 }
 
 .infotag-date{
   font-size:12px;
   color:#0030FF;
+}
+
+@media only screen and (max-width: 768px) {
+  .infotag div{
+    margin : 10px 10px 10px 10px;
+    font-size:24px;
+
+  }
+  .infotag label{
+    background-image:url(../images/ic_camera_roll_black_24dp.png);
+    background-repeat: no-repeat;
+    -moz-background-size:contain;        /*for Firefox*/
+    -webkit-background-size:contain;        /*for Google Chrome、Safari*/
+    -o-background-size:contain;        /*for Opera*/
+    background-size:contain;        /*for IE*/
+    font-size:28px;
+    color:#0020FF;
+    padding-left:25px;
+  }
+
+  .infotag-date{
+    font-size:22px;
+    color:#0030FF;
+  }
 }
