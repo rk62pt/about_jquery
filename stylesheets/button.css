@@ -1,0 +1,105 @@
+.container div{
+  margin : 5px 5px 5px 5px;
+}
+
+.default_button{
+  display: block;
+  width: 100px;
+  height: 20px;
+  background: #4E9CAF;
+  padding: 10px;
+  text-align: center;
+  border-radius: 18px;
+  color: white;
+  font-weight: bold;
+  text-decoration:none;
+}
+
+.default_button:hover{
+  background: #4E9000;
+  /*border-style:outset;*/
+  border: 1px solid transparent;
+  text-shadow:0px 0px 15px #FF37FD;
+  text-shadow:1px 1px #cccccc;
+}
+
+.default_button:active{
+  background: #400000;
+}
+
+.sb_button{
+  display: block;
+  width: 100px;
+  height: 20px;
+  background: #4E9CAF;
+  padding: 10px;
+  text-align: center;
+  border-radius: 18px;
+  color: white;
+  font-weight: bold;
+  text-decoration:none;
+  border: 1px solid transparent;
+  box-shadow:5px 5px 12px #AAAAAA;
+  /*text-shadow:0px 0px 5px #FFFFFF;*/
+}
+
+.sb_button:active{
+  /*background: #AAAAAA;*/
+  box-shadow:0px 0px 12px #AAAAAA;
+  text-shadow:1px 1px 1px #FFFFFF;
+}
+
+.sbn_button{
+  display: block;
+  width: 100px;
+  height: 20px;
+  background: #4E9CAF;
+  padding: 10px;
+  text-align: center;
+  border-radius: 18px;
+  color: white;
+  font-weight: bold;
+  text-decoration:none;
+}
+
+.sbn_button:hover{
+  background: #4E9000;
+  /*border-style:outset;*/
+  border: 1px solid transparent;
+  box-shadow:3px 3px 12px #AAAAAA;
+  text-shadow:0px 0px 5px #FFFFFF;
+}
+
+.sbn_button:active{
+  background: #AAAAAA;
+  box-shadow:0px 0px 12px #AAAAAA;
+}
+
+.slider_button{
+  display: block;
+  width: 100px;
+  height: 20px;
+  background: #4E9CAF;
+  padding: 10px;
+  text-align: center;
+  border-radius: 18px;
+  color: white;
+  font-weight: bold;
+  text-decoration:none;
+}
+
+.slider_button:hover{
+  background: #4EAA00;
+  transition: background 2s linear;
+
+  /*border-style:outset;*/
+  border: 1px solid transparent;
+  box-shadow:3px 3px 12px #AAAAAA;
+  text-shadow:0px 0px 5px #FFFFFF;
+}
+
+.slider_button:active{
+  background: #AAAAAA;
+  transition: background 0s linear;
+  box-shadow:0px 0px 12px #AAAAAA;
+}
