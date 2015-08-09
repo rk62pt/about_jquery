@@ -44,8 +44,15 @@
 }
 
 .infotag label{
+  background-image:url(../images/ic_camera_roll_black_24dp.png);
+  background-repeat: no-repeat;
+  -moz-background-size:contain;        /*for Firefox*/
+  -webkit-background-size:contain;        /*for Google Chrome、Safari*/
+  -o-background-size:contain;        /*for Opera*/
+  background-size:contain;        /*for IE*/
   font-size:18px;
   color:#0020FF;
+  padding-left:20px; 
 }
 
 .infotag-date{

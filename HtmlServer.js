@@ -15,6 +15,16 @@ server = http.createServer(function (req, res) {
     var tmp  = path.pathname.lastIndexOf(".");
     var extension  = path.pathname.substring((tmp + 1));
     console.log("filePath="+filePath);
+
+    if (extension === 'png'||extension === 'jpg'||extension === 'git'){
+      var img = fs.readFileSync(filePath);
+      res.writeHead(200, {'Content-Type': 'image/'+extension});
+      //res.write(file);
+      console.log("image");
+      res.end(img, 'binary');
+      return;
+    }
+
     fs.readFile(filePath, encode, function(err, file) {
       console.log("err="+err);
       if (err) {
@@ -37,6 +47,7 @@ server = http.createServer(function (req, res) {
         return;
       }else if (extension === 'png'||extension === 'jpg'||extension === 'git'){
         res.writeHead(200, {'Content-Type': 'image/'+extension});
+        //res.write(file);
         res.end(file, 'binary');
         return;
       }else{
@@ -47,6 +58,7 @@ server = http.createServer(function (req, res) {
       res.write(file);
       //console.log(file);
       res.end();
+      //res.end(file, 'binary');
     });
 });
 
