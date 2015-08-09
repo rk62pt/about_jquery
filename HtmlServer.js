@@ -31,13 +31,21 @@ server = http.createServer(function (req, res) {
         res.writeHead(200, {'Content-Type': 'text/javascript'});
       }else if (extension === 'css'){
         res.writeHead(200, {'Content-Type': 'text/css'});
+      }else if (extension === 'ico'){
+        res.writeHead(200, {'Content-Type': 'image/icon'});
+        res.end(file, 'binary');
+        return;
+      }else if (extension === 'png'||extension === 'jpg'||extension === 'git'){
+        res.writeHead(200, {'Content-Type': 'image/'+extension});
+        res.end(file, 'binary');
+        return;
       }else{
         res.writeHead(200, {'Content-Type': 'text/html'});
       }
-      
+
       //res.writeHead(200, {'Content-Type': 'text/html'});
       res.write(file);
-      console.log(file);
+      //console.log(file);
       res.end();
     });
 });
