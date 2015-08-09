@@ -61,6 +61,44 @@
 }
 
 @media only screen and (max-width: 768px) {
+  @keyframes slidein {
+    from {
+      /*padding-left: 100%;
+      width: 300%;*/
+      width:150px;
+      height : 150px;
+      background-color: white;
+    }
+
+    to {
+      /*padding-left: 0%;
+      width: 100%;*/
+      width:300px;
+      height : auto;
+      background-color: #DDDDDD;
+    }
+  }
+
+  .infotag{
+    width : 150px;
+    height : 150px;
+    border : 1px;
+    border-style:solid;
+    margin : 5px 5px 5px 5px;
+    display : inline-block;
+    overflow:hidden;
+    vertical-align : top;
+    /*overflow-y:auto;*/
+  }
+  .infotag:hover{
+    opacity: .8;
+    min-height: 150px;
+    width:300px;
+    height : auto;
+    animation-duration: 1.5s;
+    animation-name: slidein;
+    background-color: #DDDDDD;
+  }
   .infotag div{
     margin : 10px 10px 10px 10px;
     font-size:10px;
