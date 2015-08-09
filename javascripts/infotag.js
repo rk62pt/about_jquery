@@ -1,17 +1,13 @@
-$.fn.infotag = function(data){
+$.fn.infotag = function(title,description,startDate,endDate){
   $this = this;
-  data.forEach(function(obj){
+  var divContent = $("<div>").addClass("infotag");
+  var label = $("<label>").html(title);
+  var div = $("<div>").append(label);
+  var descriptDiv = $("<div>").html(description);
 
-    var divContent = $("<div>").addClass("infotag");
-    var label = $("<label>").html(obj.title);
-    var div = $("<div>").append(label);
-    var descriptDiv = $("<div>").html(obj.descriptionFilterHtml);
+  var dateDiv = $("<div>").addClass("infotag-date").html(startDate+"~"+endDate);
+  divContent.append(div).append(dateDiv).append(descriptDiv);
 
-    var dateDiv = $("<div>").addClass("infotag-date").html(obj.startDate+"~"+obj.endDate);
-    divContent.append(div).append(dateDiv).append(descriptDiv);
-
-    $this.append(divContent);
-  });
+  $this.append(divContent);
   return this;
-
 }
