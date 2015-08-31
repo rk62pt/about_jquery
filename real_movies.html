@@ -13,24 +13,23 @@
 <script>
 
 $(function(){
-  $.ajaxPrefilter(function(options) {
-    if(options.crossDomain && jQuery.support.cors) {
-      var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
-      //options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
-      options.url = http + '//cros.herokuapp.com/' + options.url;
-      //options.url = "http://cors.corsproxy.io/url=" + options.url;
-    }
-  });
+  // $.ajaxPrefilter(function(options) {
+  //   if(options.crossDomain && jQuery.support.cors) {
+  //     var http = (window.location.protocol === 'http:' ? 'http:' : 'https:');
+  //     options.url = http + '//cors-anywhere.herokuapp.com/' + options.url;
+  //     //options.url = "http://cors.corsproxy.io/url=" + options.url;
+  //   }
+  // });
 
   $.ajax({
     crossDomain: true,
     type:"GET",
     contentType: "application/json; charset=UTF-8",
-    url:"http://cloud.culture.tw/frontsite/trans/SearchShowAction.do?method=doFindTypeJ&category=8",
+    url:"data/movie.json",
     dataType:"json",
     success:function(value){
       //alert( jqXHR.responseText);
-      console.log(value);
+      //console.log(value);
       $("#container").infotag(value);
     },
     error: function(XHR, textStatus, errorThrown) {
