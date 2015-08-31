@@ -4,12 +4,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <head>
 <title>popup page</title>
+
+<!-- <link rel="stylesheet" type="text/css" href="stylesheets/reset.css" /> -->
 <link rel="stylesheet" type="text/css" href="stylesheets/button.css" />
-<link rel="stylesheet" type="text/css" href="stylesheets/reset.css" />
 <link rel="stylesheet" type="text/css" href="stylesheets/popup.css" />
 </head>
 <body>
   <div id="container" >
+    <div></div>
     <div>
     <a id="btnPopup" href="javascript:void(0);" class="sb_button">按鈕</a>
     </div>
@@ -19,7 +21,9 @@
   <script type="text/javascript" src="javascripts/popup.js"></script>
   <script>
     $(function(){
-      $("#divPop").popup();
+      $("#btnPopup").on("click",function(){
+        $(this).popup("open");
+      });
     });
     function getInfo()
   {
